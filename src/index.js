@@ -9,7 +9,7 @@ import Recipe from "./pages/Recipe";
 
 const router = createBrowserRouter([
 	{
-		basename: "/meals-project",
+		basename: "/",
 		element: <App />,
 		errorElement: <div>Not Found</div>,
 		children: [
