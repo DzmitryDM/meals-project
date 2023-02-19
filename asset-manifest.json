@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/meals-project/static/css/main.eb27c674.css",
-    "main.js": "/meals-project/static/js/main.96a75fe5.js",
+    "main.js": "/meals-project/static/js/main.a4d58991.js",
     "index.html": "/meals-project/index.html",
     "main.eb27c674.css.map": "/meals-project/static/css/main.eb27c674.css.map",
-    "main.96a75fe5.js.map": "/meals-project/static/js/main.96a75fe5.js.map"
+    "main.a4d58991.js.map": "/meals-project/static/js/main.a4d58991.js.map"
   },
   "entrypoints": [
     "static/css/main.eb27c674.css",
-    "static/js/main.96a75fe5.js"
+    "static/js/main.a4d58991.js"
   ]
 }
