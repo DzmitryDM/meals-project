@@ -21,10 +21,10 @@ const router = createBrowserRouter([
 				path: "/category/:name",
 				element: <Category />,
 			},
-         {
-         path:"/meal/:id",
-         element:<Recipe/>
-         }
+			{
+				path: "/meal/:id",
+				element: <Recipe />,
+			},
 		],
 	},
 ]);

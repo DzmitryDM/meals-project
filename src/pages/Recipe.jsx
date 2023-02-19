@@ -15,16 +15,20 @@ function Recipe() {
 
 	return (
 		<>
-			<GoBack/>
+			<GoBack />
 			{!recipe.idMeal ? (
 				<Preloader />
 			) : (
 				<div className="recipe">
-					<img className="recipeImg" src={recipe.strMealThumb} alt={recipe.strCategory} />
+					<img
+						className="recipeImg"
+						src={recipe.strMealThumb}
+						alt={recipe.strCategory}
+					/>
 					<h1>{recipe.strMeal}</h1>
 					<h3>Category: {recipe.strCategory}</h3>
 					{recipe.strArea && <h4>Country: {recipe.strArea}</h4>}
-               <h5>Cooking instructions:</h5>
+					<h5>Cooking instructions:</h5>
 					<p>{recipe.strInstructions}</p>
 					<table className="highlight tableRecipe">
 						<thead>
@@ -34,16 +38,23 @@ function Recipe() {
 							</tr>
 						</thead>
 						<tbody>
-							
-                     {Object.keys(recipe).map((key,index)=>{
-                     if(key.includes('Ingredient') && recipe[key])
-                     return (
-                     <tr key={index}>
-								<td>{recipe[key]}</td>
-								<td>{recipe[`strMeasure${key.slice(13)}`]}</td>
-							</tr>
-                     ) 
-                     })}
+							{Object.els(recipe).map((el, index) => {
+								if (el.includes("Ingredient") && recipe[el]) {
+									return (
+										<tr key={index}>
+											<td>{recipe[el]}</td>
+											<td>{
+                                 recipe[
+                                 `strMeasure${el.slice(
+                                 13
+                                 )}`
+                                 ]
+                                 }</td>
+										</tr>
+									);
+								}
+                        return null
+							})}
 						</tbody>
 					</table>
 					{recipe.strYoutube && (
@@ -56,7 +67,6 @@ function Recipe() {
 								)}`}
 								allowFullScreen
 							/>
-                  
 						</div>
 					)}
 				</div>

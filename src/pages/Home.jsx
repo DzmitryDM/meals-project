@@ -1,11 +1,9 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { getAllCategories, getFilterByCategory } from "../api";
+import { getAllCategories} from "../api";
 import CategoriesList from "../components/categogies/CategoriesList";
 import Preloader from "../components/general-components/Preloader";
 import Search from "../components/general-components/Search";
-import "./Home.css";
 
 function Home() {
 	const [catalog, setCatalog] = useState([]);
