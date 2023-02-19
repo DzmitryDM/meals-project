@@ -1,0 +1,24 @@
+.btnClick{
+position: absolute;
+top: 0;
+right: 0;
+}
+.goBack{
+   display: inline;
+padding: 0.2rem 0rem 0.2rem 0rem;
+cursor: pointer;
+}
+
+.btnClick:hover{
+background-color: rgb(41, 30, 141);
+}
+.btnClick{
+background-color: #3f51b5;
+}
+
+
+
+.input-field input[type=text]:focus{
+border-bottom: 1px solid #000;
+   box-shadow: 0 1px 0 0 #000;
+}

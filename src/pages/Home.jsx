@@ -1,26 +1,56 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { getAllCategories, getFilterByCategory } from '../api'
-import CategoriesList from '../components/categogies/CategoriesList'
-import Preloader from '../components/general-components/Preloader'
-import './Home.css'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { getAllCategories, getFilterByCategory } from "../api";
+import CategoriesList from "../components/categogies/CategoriesList";
+import Preloader from "../components/general-components/Preloader";
+import Search from "../components/general-components/Search";
+import "./Home.css";
 
 function Home() {
+	const [catalog, setCatalog] = useState([]);
+	const [catalogFiltered, setCatalogFiltered] = useState([]);
 
-   const [catalogmeal,setCatalogmeal]=useState([])
+	const { pathname, search } = useLocation();
+   
 
-useEffect(()=>{
-getAllCategories().then(data=>{
-setCatalogmeal(data.categories)
-})
-},[])
+	const navigate = useNavigate();
 
+	useEffect(() => {
+		getAllCategories().then((data) => {
+			setCatalog(data.categories);
+			setCatalogFiltered(search?
+					data.categories.filter((item) =>
+							item.strCategory
+								.toLowerCase()
+								.includes(search.split("=")[1].toLowerCase())
+					  ): data.categories
+			); 
+		});
+	}, [search]);
 
-  return (
-    <div className='homePage'>
-    {!catalogmeal.length?<Preloader/>:<CategoriesList catalogmeal={catalogmeal}/>}
-    </div>
-  )
+	const handleSearch = (str) => {      
+         setCatalogFiltered(
+           catalogFiltered.filter((item) =>
+              item.strCategory.toLowerCase().includes(str)
+           )
+        );
+        navigate({
+           pathname,
+           search: `?search=${str}`,
+        });
+	};
+
+	return (
+		<div className="pageHome">
+			<Search handleSearch={handleSearch} />
+			{!catalog.length ? (
+				<Preloader />
+			) : (
+				<CategoriesList catalog={catalogFiltered} />
+			)}
+		</div>
+	);
 }
 
-export default Home
+export default Home;

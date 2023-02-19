@@ -1,4 +1,4 @@
-.goodsList{
+.categoriesList{
 display: grid;
 grid-template-columns: repeat(auto-fill,minmax(200px,auto));
 column-gap: 1rem;
@@ -12,5 +12,12 @@ column-gap: 1rem;
 
 .card-content {
    flex-grow: 1;
+}
 
+.btnCategories:hover {
+   background-color: rgb(41, 30, 141);
+}
+
+.btnCategories {
+   background-color: #3f51b5;
 }

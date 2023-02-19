@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Category from "./pages/Category";
+import Recipe from "./pages/Recipe";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 				path: "/category/:name",
 				element: <Category />,
 			},
+         {
+         path:"/meal/:id",
+         element:<Recipe/>
+         }
 		],
 	},
 ]);

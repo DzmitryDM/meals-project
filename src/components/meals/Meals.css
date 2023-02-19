@@ -12,5 +12,13 @@
 
 .card-content {
    flex-grow: 1;
+}
 
+
+.btnMeals:hover {
+   background-color: rgb(41, 30, 141);
+}
+
+.btnMeals {
+   background-color: #3f51b5;
 }

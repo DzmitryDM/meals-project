@@ -12,7 +12,7 @@ function MealsItem({strMeal,strMealThumb,idMeal}) {
         {strMeal}
         </div>
         <div className='card-action'>
-<Link to={`/meal/${idMeal}`} className='btn'>Watch recipe</Link>
+<Link to={`/meal/${idMeal}`} className='btn btnMeals'>Watch recipe</Link>
         </div>
       </div>
   )

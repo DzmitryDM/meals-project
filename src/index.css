@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
@@ -12,3 +13,10 @@ code {
     monospace;
 }
 
+.content {
+   min-height: calc(100vh - 70px - 64px);
+   padding: 1rem 1rem 1.5rem 1rem;
+   margin: 0 auto;
+   max-width: 70rem;
+   z-index: 10;
+}
