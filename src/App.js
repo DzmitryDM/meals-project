@@ -7,7 +7,7 @@ import Category from "./pages/Category";
 import Recipe from "./pages/Recipe";
 
 function App() {
-	const router = createBrowserRouter([
+	const routers =[
 		{
 			path: "/",
 			element: <Home />,
@@ -20,7 +20,11 @@ function App() {
 			path: "/meal/:id",
 			element: <Recipe />,
 		},
-	]);
+	]
+
+   const router =createBrowserRouter(routers,{
+   basename:"/meals-project"
+   })
 
 	return (
 		<div className="app">
