@@ -26,8 +26,8 @@ function App() {
 		<div className="app">
 			<Header />
 			<section className="content">
-         <RouterProvider router={router} />
-         </section>
+				<RouterProvider router={router} />
+			</section>
 			<Footer />
 		</div>
 	);
