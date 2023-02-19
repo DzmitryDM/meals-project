@@ -17,7 +17,19 @@
 .inputFlex {
 	display: flex;
 	align-items: center;
+   
 }
 .search {
 	margin-bottom: 0;
+}
+
+@media(max-width:768px){
+   .row .col.s6{
+   width: 70%;
+   }
+}
+@media(max-width:530px){
+   .row .col.s6{
+   width: 100%;
+   }
 }
